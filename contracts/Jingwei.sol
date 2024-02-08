@@ -24,6 +24,10 @@ contract Jingwei is Initializable {
        return admin;
     }
 
+    function getJftsLength() external view returns (uint256) {
+        return allJfts.length;
+    }
+
     function lockNFT(address token, uint256 tokenId) external {
         require(token != address(0), 'Jingwei: ZERO_ADDRESS');
         require(getJft[token] != address(0), 'Jingwei: JFT_NOT_EXISTS');
